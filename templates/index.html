@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUME — Convites que ganham vida</title>
+<meta name="description" content="LUME cria convites digitais animados e peças impressas que transformam a alegria da sua celebração em uma experiência memorável.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+{% macro sparkle(cls="sparkle") %}
+<svg class="{{ cls }}" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <path d="M50 0 C52 30 54 46 56 48 C58 50 70 52 100 50 C70 48 58 50 56 52 C54 54 52 70 50 100 C48 70 46 54 44 52 C42 50 30 48 0 50 C30 52 42 50 44 48 C46 46 48 30 50 0 Z"/>
+</svg>
+{% endmacro %}
+
+<nav class="nav">
+  <div class="container">
+    <a href="#top" class="brand">{{ sparkle("sparkle") }} LUME</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#top">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#portfolio">Portfólio</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    {{ sparkle("sparkle pulse") }}
+    <h1>Convites que<br><span class="accent-text">ganham vida.</span></h1>
+    <p class="lede">
+      LUME cria convites digitais animados e Convite Cinematográfico que
+      transformam a alegria da sua celebração em uma experiência memorável.
+    </p>
+    <div class="hero-actions">
+      <a href="#portfolio" class="btn btn-primary">Ver portfólio</a>
+      <a href="#contato" class="btn">Solicitar orçamento</a>
+      <a href="https://br.shp.ee/ukvqStrd" class="btn" target="_blank" rel="noopener">Comprar na Shopee</a>
+    </div>
+  </div>
+  <div class="scroll-hint"><span>Role para explorar</span><span class="line"></span></div>
+</header>
+
+<section class="section" id="sobre">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      {{ sparkle("sparkle pulse") }}
+    </div>
+    <div class="about-copy reveal">
+      <span class="eyebrow">Sobre a Lume</span>
+      <h2>Cada celebração<br>merece o seu brilho.</h2>
+      <p>
+        A LUME nasceu para dar forma e movimento aos momentos que mais importam.
+        Acreditamos que um convite não é apenas um aviso — é a primeira emoção
+        de uma história que ainda vai ser vivida.
+      </p>
+      <p>
+        Unimos design minimalista, tipografia refinada e animação delicada
+        para criar peças que representam a identidade de cada cliente com
+        elegância e autenticidade.
+      </p>
+      <hr class="rule">
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="portfolio">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center">Portfólio</span>
+      <h2>Convites com identidade própria.</h2>
+      <p class="lede" style="margin:0 auto">Uma seleção de peças criadas para celebrações reais — cada uma pensada do zero para contar uma história única.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="p-card reveal">
+        <span class="tag">Casamento</span>
+        <div class="p-mark">{{ sparkle("sparkle") }}</div>
+        <span class="p-title">Alba &amp; Theo</span>
+      </div>
+      <div class="p-card reveal">
+        <span class="tag">Convite Digital</span>
+        <div class="p-mark">{{ sparkle("sparkle") }}</div>
+        <span class="p-title">Noite Dourada</span>
+      </div>
+      <div class="p-card reveal">
+        <span class="tag">Aniversário</span>
+        <div class="p-mark">{{ sparkle("sparkle") }}</div>
+        <span class="p-title">Trinta &amp; Poucos</span>
+      </div>
+      <div class="p-card reveal">
+        <span class="tag">Chá de Bebê</span>
+        <div class="p-mark">{{ sparkle("sparkle") }}</div>
+        <span class="p-title">Pequena Luz</span>
+      </div>
+      <div class="p-card reveal">
+        <span class="tag">Corporativo</span>
+        <div class="p-mark">{{ sparkle("sparkle") }}</div>
+        <span class="p-title">Lançamento Aurum</span>
+      </div>
+      <div class="p-card reveal">
+        <span class="tag">Formatura</span>
+        <div class="p-mark">{{ sparkle("sparkle") }}</div>
+        <span class="p-title">Turma XIX</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="servicos">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Preços &amp; Serviços</span>
+      <h2>Escolha a forma como<br>sua história ganha vida.</h2>
+    </div>
+
+    <div class="reveal">
+      <div class="pricing-tabs">
+        <button class="tab active" data-tab="tab-digital">Convites Digitais</button>
+        <button class="tab" data-tab="tab-cinema">Convites Cinematográficos</button>
+        <button class="tab" data-tab="tab-papelaria">Papelaria Digital</button>
+      </div>
+
+      <div class="panel active" id="tab-digital">
+        <p class="lede" style="margin-bottom:32px">
+          Convites pensados para transformar o seu evento em uma experiência especial.
+        </p>
+        <div class="price-list">
+          <div class="price-row">
+            <div class="p-info">
+              <span class="p-name">LUME Essencial</span>
+              <span class="p-desc">Simples, elegante e direto ao ponto.</span>
+            </div>
+            <span class="p-value"><small>A partir de</small>R$ 29,90</span>
+          </div>
+          <div class="price-row">
+            <div class="p-info">
+              <span class="p-name">LUME Clássico</span>
+              <span class="p-desc">Mais espaço e interações para facilitar a experiência dos convidados.</span>
+            </div>
+            <span class="p-value"><small>A partir de</small>R$ 49,90</span>
+          </div>
+          <div class="price-row">
+            <div class="p-info">
+              <span class="p-name">LUME Completo</span>
+              <span class="p-desc">Uma experiência completa com interações, fotos, música e muito mais.</span>
+            </div>
+            <span class="p-value"><small>A partir de</small>R$ 69,90</span>
+          </div>
+          <div class="price-row">
+            <div class="p-info">
+              <span class="p-name">Personalizado do Zero</span>
+              <span class="p-desc">Criado exclusivamente para o seu momento, do seu jeito.</span>
+            </div>
+            <span class="p-value"><small>A partir de</small>R$ 89,90</span>
+          </div>
+        </div>
+        <div class="price-note">
+          Valores podem variar de acordo com a complexidade do projeto.
+        </div>
+      </div>
+
+      <div class="panel" id="tab-cinema">
+        <p class="lede" style="margin-bottom:32px">
+          LUME Motion — criados para contar a história do seu momento de uma forma única.
+        </p>
+        <div class="price-list">
+          <div class="price-list-head">
+            <span>Duração</span>
+            <span>A partir de</span>
+          </div>
+          <div class="price-row">
+            <span class="p-name">Até 15 segundos</span>
+            <span class="p-value">R$ 59,90</span>
+          </div>
+          <div class="price-row">
+            <span class="p-name">16 a 30 segundos</span>
+            <span class="p-value">R$ 89,90</span>
+          </div>
+          <div class="price-row">
+            <span class="p-name">31 a 45 segundos</span>
+            <span class="p-value">R$ 119,90</span>
+          </div>
+          <div class="price-row">
+            <span class="p-name">46 a 60 segundos</span>
+            <span class="p-value">R$ 149,90</span>
+          </div>
+          <div class="price-row">
+            <span class="p-name">1 a 1:30 min</span>
+            <span class="p-value">R$ 199,90</span>
+          </div>
+          <div class="price-row">
+            <span class="p-name">Acima de 1:30 min</span>
+            <span class="p-value">Sob consulta</span>
+          </div>
+        </div>
+        <div class="price-note">
+          <strong>Importante:</strong> quanto maior a duração e a complexidade do vídeo,
+          maior o investimento.
+        </div>
+      </div>
+
+      <div class="panel" id="tab-papelaria">
+        <p class="lede" style="margin-bottom:32px">
+          Peças digitais personalizadas para completar cada detalhe da sua celebração.
+        </p>
+
+        <div class="group-label">
+          <span class="dash"></span>
+          <span>Papelaria Personalizada</span>
+        </div>
+        <div class="grid">
+          <div class="grid-item">
+            <span class="idx">01</span>
+            <span class="name">Tags</span>
+          </div>
+          <div class="grid-item">
+            <span class="idx">02</span>
+            <span class="name">Marcadores de lugar</span>
+          </div>
+          <div class="grid-item">
+            <span class="idx">03</span>
+            <span class="name">Cartões</span>
+          </div>
+          <div class="grid-item">
+            <span class="idx">04</span>
+            <span class="name">Menus</span>
+          </div>
+          <div class="grid-item">
+            <span class="idx">05</span>
+            <span class="name">Identificadores</span>
+          </div>
+          <div class="grid-item">
+            <span class="idx">06</span>
+            <span class="name">Lembrancinhas</span>
+          </div>
+          <div class="grid-item">
+            <span class="idx">07</span>
+            <span class="name">Papelaria para mesas</span>
+          </div>
+          <div class="grid-item">
+            <span class="idx">08</span>
+            <span class="name">Itens personalizados para eventos</span>
+          </div>
+        </div>
+
+        <div class="group-label">
+          <span class="dash"></span>
+          <span>💍 Experiências para Casamento</span>
+        </div>
+        <div class="grid">
+          <div class="grid-item">
+            <span class="idx">01</span>
+            <span class="name">Manual dos padrinhos</span>
+          </div>
+          <div class="grid-item">
+            <span class="idx">02</span>
+            <span class="name">Convite dos padrinhos</span>
+          </div>
+          <div class="grid-item">
+            <span class="idx">03</span>
+            <span class="name">Kit dos padrinhos</span>
+          </div>
+          <div class="grid-item">
+            <span class="idx">04</span>
+            <span class="name">Save the date</span>
+          </div>
+          <div class="grid-item">
+            <span class="idx">05</span>
+            <span class="name">Identidade visual do casamento</span>
+          </div>
+          <div class="grid-item">
+            <span class="idx">06</span>
+            <span class="name">Papelaria completa do casamento</span>
+          </div>
+        </div>
+
+        <div class="price-note">
+          Cada item é criado sob medida — valores calculados conforme a peça e a
+          personalização escolhidas. Fale com a gente para um orçamento.
+        </div>
+      </div>
+
+      <div class="group-label">
+        <span class="dash"></span>
+        <span>Adicionais Lume</span>
+      </div>
+      <div class="grid">
+        <div class="grid-item">
+          <span class="idx">01</span>
+          <span class="name">Página extra</span>
+        </div>
+        <div class="grid-item">
+          <span class="idx">02</span>
+          <span class="name">Interação extra</span>
+        </div>
+        <div class="grid-item">
+          <span class="idx">03</span>
+          <span class="name">Alteração adicional</span>
+        </div>
+        <div class="grid-item">
+          <span class="idx">04</span>
+          <span class="name">Cena adicional no vídeo</span>
+        </div>
+        <div class="grid-item">
+          <span class="idx">05</span>
+          <span class="name">15 segundos adicionais</span>
+        </div>
+        <div class="grid-item">
+          <span class="idx">06</span>
+          <span class="name">Roteiro totalmente personalizado</span>
+        </div>
+        <div class="grid-item">
+          <span class="idx">07</span>
+          <span class="name">Urgência</span>
+        </div>
+        <div class="grid-item">
+          <span class="idx">08</span>
+          <span class="name">Música escolhida pelo cliente</span>
+          <span class="name-note">Incluso / conforme licença</span>
+        </div>
+        <div class="grid-item">
+          <span class="idx">09</span>
+          <span class="name">Animação especial</span>
+        </div>
+        <div class="grid-item">
+          <span class="idx">10</span>
+          <span class="name">Criação de personagem/ilustração com IA</span>
+        </div>
+        <div class="grid-item">
+          <span class="idx">11</span>
+          <span class="name">Legendas em outro idioma</span>
+        </div>
+        <div class="grid-item">
+          <span class="idx">12</span>
+          <span class="name">RSVP integrado</span>
+          <span class="name-note">Confirmação de presença</span>
+        </div>
+      </div>
+
+      <div class="brandrow">
+        <div class="brand-cell">
+          <div class="brand-tag">Design</div>
+          <h4>Exclusivo</h4>
+          <p>Cada peça é criada do zero para representar a sua história.</p>
+        </div>
+        <div class="brand-cell">
+          <div class="brand-tag">Atendimento</div>
+          <h4>Próximo</h4>
+          <p>Retorno em até 24 horas em todas as etapas do projeto.</p>
+        </div>
+        <div class="brand-cell">
+          <div class="brand-tag">Acabamento</div>
+          <h4>Premium</h4>
+          <p>Materiais e finalizações selecionados a dedo.</p>
+        </div>
+        <div class="brand-cell">
+          <div class="brand-tag">Entrega</div>
+          <h4>Garantida</h4>
+          <p>Prazo combinado no início do projeto — e sempre cumprido.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="contato">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Contato</span>
+      <h2>Vamos criar o<br>seu convite?</h2>
+      <p>Conte um pouco sobre sua celebração e retornaremos com uma proposta personalizada em até 24 horas.</p>
+      <ul class="contact-list">
+        <li><a href="mailto:lumeconvites.oficial@gmail.com">lumeconvites.oficial@gmail.com</a></li>
+        <li><a href="https://wa.me/5511918781240">+55 (11) 91878-1240 · WhatsApp</a></li>
+        <li><a href="https://instagram.com/lumeconvites.oficial" target="_blank" rel="noopener">@lumeconvites.oficial</a></li>
+        <li><a href="https://br.shp.ee/ukvqStrd" target="_blank" rel="noopener">Nossa loja na Shopee</a></li>
+      </ul>
+    </div>
+    <div class="contact-form reveal">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <form action="{{ url_for('contato') }}" method="POST">
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field">
+          <label for="mensagem">Conte sobre sua celebração</label>
+          <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <a href="#top" class="brand">{{ sparkle("sparkle") }} LUME</a>
+    <p>Convites que ganham vida · © 2026</p>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
